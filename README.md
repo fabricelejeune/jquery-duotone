@@ -54,3 +54,9 @@ Process the image to a duotone
 ```html
 $("img").duotone("process");
 ```
+
+## TODO
+
+* Support srcset attribute
+* Support picture element (source)
+* Write exemples
