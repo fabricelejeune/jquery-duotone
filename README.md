@@ -6,11 +6,26 @@ Include the following resources on your page before initializing:
 
 ```html
 <script src="jquery.duotone.js"></script>
+```
+
+## Exemples
+
+Pass your gradient map as an option of the plugin:
+```html
 <script>
-  // To attach Backstrech to an image element
+  // To attach Duotone to an image element
   $("img").duotone({
     gradientMap: "#0000FF, white"
   });
+</script>
+```
+
+Or use the ```data-gradient-map``` attribute:
+```html
+<img src="your-image.jpg" data-gradient-map="lightslategrey, mistyrose">
+<script>
+  // To attach Duotone to an image element
+  $("img").duotone();
 </script>
 ```
 
