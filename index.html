@@ -106,11 +106,19 @@
       <pre><code class="js">$(&quot;img&quot;).duotone(&quot;process&quot;);</code></pre>
 
       <h2 id="exemples">Exemples</h2>
+      <p>Pass your gradient map as an option of the plugin:</p>
+      <pre><code class="js">$('img').duotone({
+  gradientMap: '#0000FF, #FFFFFF'
+});</code></pre>
+      <p>Or use the data-gradient-map attribute:</p>
+      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;#0000FF, #FFFFFF&quot;&gt;</code></pre>
+      <pre><code class="js">$('img').duotone();</code></pre>
+
       <p>Hover each exemples to reveal the original images.</p>
 
-      <h3>basic</h3>
+      <h3>API</h3>
       <p>Here is a basic usage exemple including the API.</p>
-      <pre><code class="html">&lt;img src=&quot;IMAGE_SOURCE&quot; data-gradient-map=&quot;#0433ff, #ffe4e1&quot;&gt;</code></pre>
+      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;#0433ff, #ffe4e1&quot;&gt;</code></pre>
       <pre><code class="js">$( document ).ready(function() {
   $('img').duotone();
 
@@ -145,7 +153,7 @@
 
       <h3>stop position</h3>
       <p>Add some color stop positions for a better control of your gradient map.</p>
-      <pre><code class="html">&lt;img src=&quot;IMAGE_SOURCE&quot; data-gradient-map=&quot;#271f37 25%, #dc143c&quot;&gt;</code></pre>
+      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;#271f37 25%, #dc143c&quot;&gt;</code></pre>
       <div class="exemple">
         <img src="img/tumblr_n7ouowr83J1sk1lrbo1_1280.jpg" class="duotone" data-gradient-map="#271f37 25%, #dc143c">
         <img src="img/tumblr_n7ouowr83J1sk1lrbo1_1280.jpg">
@@ -153,7 +161,7 @@
 
       <h3>hex but also color name, rgb or hsl</h3>
       <p>As you can use the same format as CSS linear gradients, you can also use each CSS color definitions.</p>
-      <pre><code class="html">&lt;img src=&quot;IMAGE_SOURCE&quot; data-gradient-map=&quot;darkblue, rgb(105, 105, 105) 60%, hsl(55, 91%, 69%) 90%&quot;&gt;</code></pre>
+      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;darkblue, rgb(105, 105, 105) 60%, hsl(55, 91%, 69%) 90%&quot;&gt;</code></pre>
       <div class="exemple">
         <img src="img/tumblr_n79xl6doRf1sk1lrbo1_1280.jpg" class="duotone" data-gradient-map="darkblue, rgb(105, 105, 105) 60%, hsl(55, 91%, 69%) 90%">
         <img src="img/tumblr_n79xl6doRf1sk1lrbo1_1280.jpg">
