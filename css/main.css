@@ -1,0 +1,370 @@
+html {
+  font-family: 'PT Serif', serif;
+  font-size: 100%;
+  line-height: 1.4;
+  background-color: #f7f3e9;
+  color: #161616;
+}
+
+body{
+  -webkit-font-feature-settings: normal;
+  -moz-font-feature-settings: "kern" 1, "liga" 1;
+  font-feature-settings:"kern" 1, "liga" 1;
+}
+
+pre,
+code{
+  -webkit-font-feature-settings: normal;
+  -moz-font-feature-settings: normal;
+  font-feature-settings: normal;
+}
+
+p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+}
+
+.site-header {
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 56px;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+}
+
+.site-header .site-baseline {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 32px;
+  line-height: 2rem;
+}
+
+.site-nav {
+  padding: 32px 0;
+  background-color: #f0eee7;
+}
+
+.site-nav ol {
+  margin: 0 auto;
+  width: 800px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.site-nav ol li {
+  padding: 2px 0;
+}
+
+.site-footer {
+  margin: 64px auto 24px;
+  width: 800px;
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.content {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.content h2,
+.content h3 {
+  position: relative;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.content h2 {
+  margin-top: 48px;
+}
+
+.content h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background-color: #1d6dd5;
+}
+
+.exemple {
+  position: relative;
+  margin-left: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  width: 800px;
+}
+
+.exemple + .exemple {
+  margin-top: 64px;
+}
+
+.actions {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.actions .btn {
+  margin-right: 6px;
+}
+
+img {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
+.duotone {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .6s;
+}
+
+.duotone.processed {
+  opacity: 1;
+}
+
+.duotone:hover {
+  opacity: 0;
+}
+
+a {
+  color: #1d6dd5;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+a:hover {
+  border-bottom: 1px solid #1d6dd5;
+}
+
+table {
+  font-family: 'PT Sans', sans-serif;
+  width: 100%;
+  max-width: 100%;
+  background-color: #fffaed;
+  margin-bottom: 12px;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 22px;
+  line-height: 1.375rem;
+  vertical-align: middle;
+  border: 0 none;
+}
+table > thead > tr > th.no-border,
+table > thead > tr > td.no-border,
+table > tbody > tr > th.no-border,
+table > tbody > tr > td.no-border,
+table > tfoot > tr > th.no-border,
+table > tfoot > tr > td.no-border {
+  border: 0 none;
+}
+table > thead > tr > th {
+  background: #f0eee7;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 400;
+  text-align: left;
+}
+table > tbody + tbody {
+  border-top: 2px solid brown;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 4px 24px;
+  height: auto;
+  width: auto;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 32px;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #1d6dd5;
+  background-color: transparent;
+  background-image: none;
+  border: 2px solid #1d6dd5;
+  box-shadow: inset 0 0 #1d6dd5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition:
+    box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+    color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition:
+    box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+    color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: inset 6em 0 #1d6dd5;
+  color: #ffffff;
+  text-decoration: none;
+  outline: none;
+}
+
+.btn:active,
+.btn.active {
+  outline: 0;
+  background-image: none;
+}
+
+.btn[disabled],
+.btn[disabled]:hover,
+.btn[disabled]:focus {
+  color: #1d6dd5;
+  opacity: 0.4;
+  box-shadow: inset 0 0 #f7f3e9;
+  -webkit-transition-duration: 0, 0.2s;
+  transition-duration: 0, 0.2s;
+}
+
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fffaed;
+  color: #657b83;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rules .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.hljs-type,
+.hljs-link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
