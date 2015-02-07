@@ -1,5 +1,5 @@
 /**
- * jquery.duotone v1.0.0 - 2015-1-5
+ * jquery.duotone v1.1.0 - 2015-1-7
  * A jQuery plugin which turn all your images to duotone.
  * 
  * Copyright 2015 Fabrice Lejeune; MIT Licensed
@@ -261,11 +261,11 @@ var __slice = [].slice;
 
     getColorStops = function(gradient_map) {
       var color_stop, color_stop_matches, current_pos, delta, end_pos, i, j, matches, n_stops, pos_match, start_pos, stop, stops, _i, _j, _k, _len, _ref, _ref1, _ref2;
-      matches = gradient_map.match(/(((rgb|hsl)a?\(\d{1,3},\s*\d{1,3},\s*\d{1,3}(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(0?\.\d+|\d{1,3}%))?)/g);
+      matches = gradient_map.match(/(((rgb|hsl)a?\(\d{1,3}%?,\s*\d{1,3}%?,\s*\d{1,3}%?(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(0?\.\d+|\d{1,3}%))?)/g);
       stops = [];
       for (_i = 0, _len = matches.length; _i < _len; _i++) {
         color_stop = matches[_i];
-        color_stop_matches = color_stop.match(/(?:((rgb|hsl)a?\(\d{1,3},\s*\d{1,3},\s*\d{1,3}(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(?:0?\.\d+|\d{1,3}%))?)/);
+        color_stop_matches = color_stop.match(/(?:((rgb|hsl)a?\(\d{1,3}%?,\s*\d{1,3}%?,\s*\d{1,3}%?(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(?:0?\.\d+|\d{1,3}%))?)/);
         if (color_stop_matches && color_stop_matches.length >= 4) {
           pos_match = color_stop_matches[3];
           stops.push({

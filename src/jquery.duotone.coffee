@@ -59,11 +59,11 @@
     # If a color-stop, other than the first or last, does not have a length or percentage, it is assigned the position half way between the previous and the next stop.
     # If a color-stop, other than the first or last, has a specified position less than the previous stop, its position is changed to be equal to the largest specified position of any prior color-stop.
     getColorStops = (gradient_map) ->
-      matches = gradient_map.match(/(((rgb|hsl)a?\(\d{1,3},\s*\d{1,3},\s*\d{1,3}(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(0?\.\d+|\d{1,3}%))?)/g)
+      matches = gradient_map.match(/(((rgb|hsl)a?\(\d{1,3}%?,\s*\d{1,3}%?,\s*\d{1,3}%?(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(0?\.\d+|\d{1,3}%))?)/g)
 
       stops = []
       for color_stop in matches
-        color_stop_matches = color_stop.match(/(?:((rgb|hsl)a?\(\d{1,3},\s*\d{1,3},\s*\d{1,3}(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(?:0?\.\d+|\d{1,3}%))?)/)
+        color_stop_matches = color_stop.match(/(?:((rgb|hsl)a?\(\d{1,3}%?,\s*\d{1,3}%?,\s*\d{1,3}%?(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(?:0?\.\d+|\d{1,3}%))?)/)
         if color_stop_matches && color_stop_matches.length >= 4
           pos_match = color_stop_matches[3]
           stops.push({
