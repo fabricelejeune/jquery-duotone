@@ -2,6 +2,15 @@
 A jQuery plugin which turn all your images to duotone.
 
 ## Installation
+Install using Bower
+
+```
+bower install jquery-duotone
+```
+
+or [download as zip](https://github.com/fabricelejeune/jquery-duotone/archive/master.zip)
+or [fork on GitHub](https://github.com/fabricelejeune/jquery-duotone).
+
 Include the following resources on your page before initializing:
 
 ```html
