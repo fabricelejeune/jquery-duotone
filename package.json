@@ -2,7 +2,7 @@
   "name": "jquery.duotone",
   "title": "Duotone",
   "description": "A jQuery plugin which turn all your images to duotone.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "keywords": [
     "duotone",
     "halftone",
@@ -16,6 +16,7 @@
     "email": "info@fabricelejeune.com",
     "url": "http://fabricelejeune.com"
   },
+  "homepage": "http://fabricelejeune.github.io/jquery-duotone/",
   "repository": {
     "type": "git",
     "url": "https://github.com/fabricelejeune/jquery-duotone.git"

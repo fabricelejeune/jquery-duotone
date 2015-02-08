@@ -1,5 +1,5 @@
 /**
- * jquery.duotone v1.1.0 - 2015-1-7
+ * jquery.duotone v1.2.0 - 2015-1-8
  * A jQuery plugin which turn all your images to duotone.
  * 
  * Copyright 2015 Fabrice Lejeune; MIT Licensed
