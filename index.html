@@ -49,8 +49,8 @@
         <a class="github-button" href="https://github.com/fabricelejeune/jquery-duotone/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega">Download</a>
         <a class="github-button" href="https://github.com/fabricelejeune/jquery-duotone" data-icon="octicon-git-branch" data-count-href="/fabricelejeune/jquery-duotone/network" data-style="mega" data-count-api="/repos/fabricelejeune/jquery-duotone#forks_count">Fork</a>
       </p>
-      <p>Include the following resources on your page before initializing:</p>
-      <pre><code class="js">&lt;script src=&quot;jquery.duotone.js&quot;&gt;&lt;/script&gt;</code></pre>
+      <p>Include the following resource on your page before initializing:</p>
+      <pre><code class="html">&lt;script src=&quot;jquery.duotone.js&quot;&gt;&lt;/script&gt;</code></pre>
       <h2>Options</h2>
       <p>Options are set by passing a valid options object at initialization or to the public "defaults" method. You can also set the gradient map option for a specific instance by attaching a <code>data-gradient-map</code> attribute containing a properly formatted CSS linear gradients.</p>
       <table>
@@ -107,38 +107,49 @@
 
       <h2 id="exemples">Exemples</h2>
       <p>Pass your gradient map as an option of the plugin:</p>
-      <pre><code class="js">$('img').duotone({
-  gradientMap: '#0000FF, #FFFFFF'
-});</code></pre>
-      <p>Or use the data-gradient-map attribute:</p>
-      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;#0000FF, #FFFFFF&quot;&gt;</code></pre>
-      <pre><code class="js">$('img').duotone();</code></pre>
+      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot;&gt;
+&lt;script&gt;
+  $(document).ready(function() {
+    $('img').duotone({
+      gradientMap: '#0000FF, #FFFFFF'
+    });
+  });
+&lt;/script&gt;</code></pre>
+      <p>Or use the <code>data-gradient-map</code> attribute:</p>
+      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;#0000FF, #FFFFFF&quot;&gt;
+&lt;script&gt;
+  $(document).ready(function() {
+    $('img').duotone();
+  });
+&lt;/script&gt;</code></pre>
 
       <p>Hover each exemples to reveal the original images.</p>
 
       <h3>API</h3>
       <p>Here is a basic usage exemple including the API.</p>
-      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;#0433ff, #ffe4e1&quot;&gt;</code></pre>
-      <pre><code class="js">$( document ).ready(function() {
-  $('img').duotone();
+      <pre><code class="html">&lt;img src=&quot;your-image.jpg&quot; data-gradient-map=&quot;#0433ff, #ffe4e1&quot;&gt;
+&lt;script&gt;
+  $(document).ready(function() {
+    $('img').duotone();
 
-  $('#reset').on('click', function(e) {
-    $('img').duotone('reset');
-  });
+    $('#reset').on('click', function(e) {
+      $('img').duotone('reset');
+    });
 
-  $('#process').on('click', function(e) {
-    $('img').duotone('process');
-  });
+    $('#process').on('click', function(e) {
+      $('img').duotone('process');
+    });
 
-  $('#update').on('click', function(e) {
-    start = $('input[name=&quot;start&quot;]').val();
-    end = $('input[name=&quot;end&quot;]').val();
-    gradient = start + ', ' + end;
-    $('img').duotone('defaults', {
-      gradientMap: gradient
-    }).duotone('process');
+    $('#update').on('click', function(e) {
+      start = $('input[name=&quot;start&quot;]').val();
+      end = $('input[name=&quot;end&quot;]').val();
+      gradient = start + ', ' + end;
+      $('img').duotone('defaults', {
+        gradientMap: gradient
+      }).duotone('process');
+    });
   });
-});</code></pre>
+&lt;/script&gt;</code></pre>
       <div class="actions">
         <button id="reset" type="button" class="btn">Reset</button>
         <button id="process" type="button" class="btn" disabled>Process</button>
@@ -172,6 +183,7 @@
 
       <h2 id="credits">Credits</h2>
       <p>All pictures came from the amazing and talented <a href="http://long-cao.tumblr.com/">Long Cao</a>.</p>
+      <p>CSS Color Parser by <a href="https://github.com/deanm/css-color-parser-js">Dean McNamee</a>.</p>
     </main>
 
     <footer class="site-footer">
@@ -185,7 +197,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
     <script src="js/jquery.duotone.js"></script>
     <script>
-      $( document ).ready(function() {
+      $(document).ready(function() {
         $('pre code').each(function(i, block) {
           hljs.highlightBlock(block);
         });
