@@ -1,5 +1,5 @@
 /**
- * jquery.duotone v1.2.1 - 2015-1-10
+ * jquery.duotone v1.2.2 - 2015-8-25
  * A jQuery plugin which turn all your images to duotone.
  * 
  * Copyright 2015 Fabrice Lejeune; MIT Licensed
@@ -206,7 +206,7 @@ function parseCSSColor(css_str) {
 }
 
 try { exports.parseCSSColor = parseCSSColor; } catch(e) { }
-var __slice = [].slice;
+var slice = [].slice;
 
 (function($) {
   var Duotone;
@@ -223,6 +223,7 @@ var __slice = [].slice;
       this.$el = $(el);
       this.options = $.extend({}, this.settings, this.$el.data(), options);
       original = new Image();
+      original.crossOrigin = 'Anonymous';
       original.src = this.$el.attr('src');
       original.onload = function() {
         var color_stops, duotoned;
@@ -237,7 +238,7 @@ var __slice = [].slice;
     }
 
     process = function(image, color_stops) {
-      var avg, b, canvas, ctx, g, gradient_colors, i, imageData, pixels, r, _i, _ref;
+      var avg, b, canvas, ctx, g, gradient_colors, i, imageData, k, pixels, r, ref;
       gradient_colors = getGradientColors(color_stops);
       canvas = document.createElement('canvas');
       ctx = canvas.getContext('2d');
@@ -246,7 +247,7 @@ var __slice = [].slice;
       ctx.drawImage(image, 0, 0, this.$el.width(), this.$el.height());
       imageData = ctx.getImageData(0, 0, this.$el.width(), this.$el.height());
       pixels = imageData.data;
-      for (i = _i = 0, _ref = pixels.length; _i <= _ref; i = _i += 4) {
+      for (i = k = 0, ref = pixels.length; k <= ref; i = k += 4) {
         r = pixels[i];
         g = pixels[i + 1];
         b = pixels[i + 2];
@@ -260,11 +261,11 @@ var __slice = [].slice;
     };
 
     getColorStops = function(gradient_map) {
-      var color_stop, color_stop_matches, current_pos, delta, end_pos, i, j, matches, n_stops, pos_match, start_pos, stop, stops, _i, _j, _k, _len, _ref, _ref1, _ref2;
+      var color_stop, color_stop_matches, current_pos, delta, end_pos, i, j, k, l, len, m, matches, n_stops, pos_match, ref, ref1, ref2, start_pos, stop, stops;
       matches = gradient_map.match(/(((rgb|hsl)a?\(\d{1,3}%?,\s*\d{1,3}%?,\s*\d{1,3}%?(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(0?\.\d+|\d{1,3}%))?)/g);
       stops = [];
-      for (_i = 0, _len = matches.length; _i < _len; _i++) {
-        color_stop = matches[_i];
+      for (k = 0, len = matches.length; k < len; k++) {
+        color_stop = matches[k];
         color_stop_matches = color_stop.match(/(?:((rgb|hsl)a?\(\d{1,3}%?,\s*\d{1,3}%?,\s*\d{1,3}%?(?:,\s*0?\.?\d+)?\)|\w+|#[0-9a-fA-F]{1,6})(\s+(?:0?\.\d+|\d{1,3}%))?)/);
         if (color_stop_matches && color_stop_matches.length >= 4) {
           pos_match = color_stop_matches[3];
@@ -290,7 +291,7 @@ var __slice = [].slice;
       } else {
         stop.pos = Math.min(100, Math.max(0, stop.pos));
       }
-      for (i = _j = 1, _ref = stops.length - 1; 1 <= _ref ? _j <= _ref : _j >= _ref; i = 1 <= _ref ? ++_j : --_j) {
+      for (i = l = 1, ref = stops.length - 1; 1 <= ref ? l <= ref : l >= ref; i = 1 <= ref ? ++l : --l) {
         stop = stops[i];
         if (stop.pos && stop.pos < current_pos) {
           stop.pos = current_pos;
@@ -303,7 +304,7 @@ var __slice = [].slice;
       i = 1;
       while (i < (stops.length - 1)) {
         if (!stops[i].pos) {
-          for (j = _k = _ref1 = i + 1, _ref2 = stops.length; _ref1 <= _ref2 ? _k <= _ref2 : _k >= _ref2; j = _ref1 <= _ref2 ? ++_k : --_k) {
+          for (j = m = ref1 = i + 1, ref2 = stops.length; ref1 <= ref2 ? m <= ref2 : m >= ref2; j = ref1 <= ref2 ? ++m : --m) {
             if (stops[j].pos) {
               break;
             }
@@ -335,12 +336,12 @@ var __slice = [].slice;
     };
 
     getGradientColors = function(color_stops) {
-      var b, canvas, ctx, g, gradient_colors, grd, i, imageData, p, pixels, r, stop, _i, _j, _len, _ref;
+      var b, canvas, ctx, g, gradient_colors, grd, i, imageData, k, l, len, p, pixels, r, ref, stop;
       canvas = document.createElement('canvas');
       ctx = canvas.getContext('2d');
       grd = ctx.createLinearGradient(0, 0, 256, 0);
-      for (_i = 0, _len = color_stops.length; _i < _len; _i++) {
-        stop = color_stops[_i];
+      for (k = 0, len = color_stops.length; k < len; k++) {
+        stop = color_stops[k];
         r = stop.color[0];
         g = stop.color[1];
         b = stop.color[2];
@@ -352,7 +353,7 @@ var __slice = [].slice;
       imageData = ctx.getImageData(0, 0, 256, 1);
       pixels = imageData.data;
       gradient_colors = [];
-      for (i = _j = 0, _ref = pixels.length; _j <= _ref; i = _j += 4) {
+      for (i = l = 0, ref = pixels.length; l <= ref; i = l += 4) {
         r = pixels[i];
         g = pixels[i + 1];
         b = pixels[i + 2];
@@ -383,12 +384,12 @@ var __slice = [].slice;
   return $.fn.extend({
     duotone: function() {
       var args, options;
-      options = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
+      options = arguments[0], args = 2 <= arguments.length ? slice.call(arguments, 1) : [];
       if (!document.createElement('canvas').getContext) {
         return;
       }
       return this.each(function() {
-        var duotone, _ref;
+        var duotone, ref;
         if ($(this).is('img')) {
           duotone = $.data(this, 'duotone');
           if (!duotone) {
@@ -398,7 +399,7 @@ var __slice = [].slice;
             return duotone[options].apply(duotone, args);
           }
         } else {
-          return (_ref = $(this).find('img')).duotone.apply(_ref, [options].concat(__slice.call(args)));
+          return (ref = $(this).find('img')).duotone.apply(ref, [options].concat(slice.call(args)));
         }
       });
     }

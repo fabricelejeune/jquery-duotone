@@ -12,6 +12,7 @@
       @options = $.extend({}, @settings, @$el.data(), options)
 
       original = new Image()
+      original.crossOrigin = 'Anonymous'
       original.src = @$el.attr('src')
 
       original.onload = ->
