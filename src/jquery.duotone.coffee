@@ -4,6 +4,7 @@
 
     settings:
       gradientMap: 'black, white'
+      hdpi: false
 
     constructor: (el, options) ->
       self = @
@@ -31,11 +32,11 @@
       canvas = document.createElement('canvas')
       ctx = canvas.getContext('2d')
 
-      canvas.width = @$el.width()
-      canvas.height = @$el.height()
-      ctx.drawImage(image, 0, 0, @$el.width(), @$el.height())
+      canvas.width = if @options.hdpi then image.width else @$el.width()
+      canvas.height = if @options.hdpi then image.height else @$el.height()
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
 
-      imageData = ctx.getImageData(0, 0, @$el.width(), @$el.height())
+      imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
       pixels = imageData.data
 
       for i in [0..pixels.length] by 4

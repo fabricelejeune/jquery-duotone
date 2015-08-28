@@ -1,5 +1,5 @@
 /**
- * jquery.duotone v1.2.2 - 2015-8-25
+ * jquery.duotone v1.2.3 - 2015-8-28
  * A jQuery plugin which turn all your images to duotone.
  * 
  * Copyright 2015 Fabrice Lejeune; MIT Licensed
@@ -214,7 +214,8 @@ var slice = [].slice;
     var getColorStops, getGradientColors, process;
 
     Duotone.prototype.settings = {
-      gradientMap: 'black, white'
+      gradientMap: 'black, white',
+      hdpi: false
     };
 
     function Duotone(el, options) {
@@ -242,10 +243,10 @@ var slice = [].slice;
       gradient_colors = getGradientColors(color_stops);
       canvas = document.createElement('canvas');
       ctx = canvas.getContext('2d');
-      canvas.width = this.$el.width();
-      canvas.height = this.$el.height();
-      ctx.drawImage(image, 0, 0, this.$el.width(), this.$el.height());
-      imageData = ctx.getImageData(0, 0, this.$el.width(), this.$el.height());
+      canvas.width = this.options.hdpi ? image.width : this.$el.width();
+      canvas.height = this.options.hdpi ? image.height : this.$el.height();
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       pixels = imageData.data;
       for (i = k = 0, ref = pixels.length; k <= ref; i = k += 4) {
         r = pixels[i];
